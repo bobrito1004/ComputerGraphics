@@ -23,7 +23,6 @@ int main(int argc, char* argv[])
 // #pragma region lab2
 //     auto game = PongGame();
 // #pragma endregion lab2
-add
 // #pragma region lab3
 //     auto game = SpaceGame();
 // #pragma endregion lab3
