@@ -7,7 +7,7 @@ void PongGame::SetBackgroundColor()
 	context_->ClearRenderTargetView(render_view_, color);
 }
 
-PongGame::PongGame() : Game(L"MyGame", 800, 800)
+PongGame::PongGame() : Game(L"Pong", 800, 800)
 {
 	std::vector<DirectX::XMFLOAT4> points = {
 		DirectX::XMFLOAT4(0.02f, 0.2f, 0, 1.0f),	DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
