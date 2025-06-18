@@ -1,0 +1,68 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\earth.dds||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:earth.dds||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\white.dds||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:white.dds||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\yellow.dds||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:yellow.dds||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "earth.dds",
+              "DocumentMoniker": "D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\earth.dds",
+              "RelativeDocumentMoniker": "earth.dds",
+              "ToolTip": "D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\earth.dds",
+              "RelativeToolTip": "earth.dds",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-18T11:00:03.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "white.dds",
+              "DocumentMoniker": "D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\white.dds",
+              "RelativeDocumentMoniker": "white.dds",
+              "ToolTip": "D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\white.dds",
+              "RelativeToolTip": "white.dds",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-18T10:56:59.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "yellow.dds",
+              "DocumentMoniker": "D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\yellow.dds",
+              "RelativeDocumentMoniker": "yellow.dds",
+              "ToolTip": "D:\\Code\\ComputerGraphics\\ComputerGraphics\\Textures\\yellow.dds",
+              "RelativeToolTip": "yellow.dds",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-06-18T10:56:03.525Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

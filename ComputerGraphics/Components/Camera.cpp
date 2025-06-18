@@ -1,5 +1,5 @@
 #include "Camera.h"
-#include "SimpleMath.h"
+#include "../Dependencies/SimpleMath.h"
 
 using namespace DirectX;
 using namespace SimpleMath;
