@@ -10,7 +10,7 @@ void SpaceGame::SetBackgroundColor()
     context_->ClearRenderTargetView(render_view_, color);
 }
 
-SpaceGame::SpaceGame() : Game(L"MyGame", 1280, 720), controller(this)
+SpaceGame::SpaceGame() : Game(L"MyGame", 1024, 1024), controller(this)
 {
     //// Sun
     CelestialBodyDesc sunDesc = {};
