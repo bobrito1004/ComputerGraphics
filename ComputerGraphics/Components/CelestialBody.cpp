@@ -35,7 +35,7 @@ void CelestialBody::Update()
     {
         position = XMVector4Transform(position, Matrix::CreateFromAxisAngle(orbitOrientationUp, game->delta_time_ * orbitSpeed));
     }
-    // rotation *= Quaternion::CreateFromAxisAngle(spinAxis, spinSpeed * game->delta_time_);
+    rotation *= Quaternion::CreateFromAxisAngle(spinAxis, spinSpeed * game->delta_time_);
     //
     // const float accelerationRate = 0.05f; // Tune this: how fast they accelerate
     // if (absoluteVelocity.LengthSquared() > 0.01f) // Avoid amplifying tiny velocities
@@ -44,9 +44,9 @@ void CelestialBody::Update()
     //     velocityDirection.Normalize();
     //     absoluteVelocity += velocityDirection * accelerationRate * game->delta_time_;
     // }
-    //
-    // // Update position with velocity
-    // position += absoluteVelocity * game->delta_time_;
+    
+    // Update position with velocity
+    position += absoluteVelocity * game->delta_time_;
     SphereComponent::Update();
 
 }

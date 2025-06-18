@@ -6,6 +6,8 @@
 #include <d3dcompiler.h>
 #include <directxmath.h>
 
+#include "Game.h"
+
 class BaseComponent : public GameComponent
 {
 private:

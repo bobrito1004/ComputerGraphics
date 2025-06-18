@@ -138,36 +138,7 @@ void CameraController::Update()
         game->Camera->Up = Vector3::Up;
         up = Vector3::Up;
     }
-
-    if (game->input_dev_->IsKeyDown(Keys::D6))
-    {
-        OrbitMode = true;
-        followShip = false;
-        targetBody = sGame->celestialBodies["moon3"];
-        game->Camera->Position = Vector3::Forward * 20.0f;
-        game->Camera->Up = Vector3::Up;
-        up = Vector3::Up;
-    }
-
-    if (game->input_dev_->IsKeyDown(Keys::D7))
-    {
-        OrbitMode = true;
-        followShip = false;
-        targetBody = sGame->celestialBodies["moon4"];
-        game->Camera->Position = Vector3::Forward * 20.0f;
-        game->Camera->Up = Vector3::Up;
-        up = Vector3::Up;
-    }
-
-    if (game->input_dev_->IsKeyDown(Keys::D9))
-    {
-        OrbitMode = true;
-        followShip = true;
-        targetBody = sGame->celestialBodies["ship"];
-        game->Camera->Position = Vector3::Forward * 20.0f;
-        game->Camera->Up = Vector3::Up;
-        up = Vector3::Up;
-    }
+    
 
     if (OrbitMode && targetBody)
     {

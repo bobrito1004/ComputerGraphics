@@ -1,4 +1,5 @@
 #pragma once
+#include "Game.h"
 #include "RectangleComponent.h"
 #include "SimpleMath.h"
 class PongGame;
@@ -19,7 +20,7 @@ public:
     //PongBall(Game* g, float client_radius, float client_density);
     PongBall(Game* g, std::vector<DirectX::XMFLOAT4> client_points, std::vector<int> client_indices);
     PongBall(Game* g, std::vector<DirectX::XMFLOAT4> client_points, std::vector<int> client_indices, DirectX::XMFLOAT2 client_offset);
-    void Update() override;
+    void Update();
     void Reset();
     //std::vector<DirectX::XMFLOAT4> GeneratePoints(float radius, float density);
     //std::vector<int> GenerateIndices(float density);
