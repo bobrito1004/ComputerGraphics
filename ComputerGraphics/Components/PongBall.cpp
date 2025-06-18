@@ -71,15 +71,15 @@ void PongBall::Update()
 					direction_.y = abs(direction_.y);
 				else if (this->GetY() < racketY - 0.2f)
 					direction_.y = -abs(direction_.y);
-	
+
 				direction_.x = abs(direction_.x);
 				speed_ *= 1.1f;
-	
-				//p_game_->hits_.push_back(DirectX::XMFLOAT4(this->GetX(), this->GetY(), this->direction_.x, 0));
+
+				p_game_->hits_.push_back(DirectX::XMFLOAT4(this->GetX(), this->GetY(), this->direction_.x, 0));
 			}
 		}
 	}
-	
+
 	else if (nextPos.x > 0.93f) {
 		float racketY = p_game_->racket2_->GetY();
 		if (nextPos.y < racketY + 0.2f && nextPos.y > racketY - 0.2f) {
@@ -88,11 +88,11 @@ void PongBall::Update()
 					direction_.y = abs(direction_.y);
 				else if (this->GetY() < racketY - 0.2f)
 					direction_.y = -abs(direction_.y);
-	
+
 				direction_.x = -abs(direction_.x);
 				speed_ *= 1.1f;
-	
-				//p_game_->hits_.push_back(DirectX::XMFLOAT4(this->GetX(), this->GetY(), this->direction_.x, 0));
+
+				p_game_->hits_.push_back(DirectX::XMFLOAT4(this->GetX(), this->GetY(), this->direction_.x, 0));
 			}
 		}
 	}
@@ -106,16 +106,30 @@ void PongBall::Update()
 	}
 	
 	else if (nextPos.x < -1.0f) {
-		p_game_->score_[1]++;
-		std::cout << "You " << p_game_->score_[0] << ":" << p_game_->score_[1] << " AI\n";
-		nextPos = DirectX::XMFLOAT2(0, 0);
-		Reset();
+		if (p_game_->balls_.size() <= p_game_->ballsToDelete.size() + 1) {
+			p_game_->score_[1]++;
+			std::cout << "Too bad! \nScore - You " << p_game_->score_[0] << ":" << p_game_->score_[1] << " AI\n";
+			nextPos = DirectX::XMFLOAT2(0, 0);
+			Reset();
+		}
+		else {
+			p_game_->ballsToDelete.push_back(std::find(p_game_->balls_.begin(), p_game_->balls_.end(), this) - p_game_->balls_.begin());
+			//this->DestroyResources();
+			//return;
+		}
 	}	
 	else if (nextPos.x > 1.0f) {
-		p_game_->score_[0]++;
-		std::cout << "You " << p_game_->score_[0] << ":" << p_game_->score_[1] << " AI\n";
-		nextPos = DirectX::XMFLOAT2(0, 0);
-		Reset();
+		if (p_game_->balls_.size() <= p_game_->ballsToDelete.size() + 1) {
+			p_game_->score_[0]++;
+			std::cout << "Nice! \nScore - You " << p_game_->score_[0] << ":" << p_game_->score_[1] << " AI\n";
+			nextPos = DirectX::XMFLOAT2(0, 0);
+			Reset();
+		}
+		else {
+			p_game_->ballsToDelete.push_back(std::find(p_game_->balls_.begin(), p_game_->balls_.end(), this) - p_game_->balls_.begin());
+			//this->DestroyResources();
+			//return;
+		}
 	}
 	SetPosition(nextPos);
 	RectangleComponent::Update();

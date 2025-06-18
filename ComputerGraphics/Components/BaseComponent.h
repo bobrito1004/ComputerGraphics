@@ -8,7 +8,12 @@
 
 class BaseComponent : public GameComponent
 {
-
+private:
+	/*DirectX::XMFLOAT4 points_[6] = {
+		DirectX::XMFLOAT4(0.5f, 0.5f, 0, 1.0f),	DirectX::XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f),
+		DirectX::XMFLOAT4(-0.5f, -0.5f, 0, 1.0f),	DirectX::XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f),
+		DirectX::XMFLOAT4(0.5f, -0.5f, 0, 1.0f),	DirectX::XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f),
+	};*/
 
 protected:
 	ID3D11InputLayout* layout_;

@@ -155,16 +155,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Components\BaseComponent.cpp" />
+    <ClCompile Include="Components\Camera.cpp" />
+    <ClCompile Include="Components\CameraController.cpp" />
+    <ClCompile Include="Components\CelestialBody.cpp" />
     <ClCompile Include="Components\Delegates.cpp" />
     <ClCompile Include="Components\DisplayWin32.cpp" />
     <ClCompile Include="Components\Game.cpp" />
     <ClCompile Include="Components\GameComponent.cpp" />
+    <ClCompile Include="Components\GridComponent.cpp" />
     <ClCompile Include="Components\InputDevice.cpp" />
     <ClCompile Include="Components\pch.cpp" />
     <ClCompile Include="Components\PongBall.cpp" />
     <ClCompile Include="Components\PongGame.cpp" />
     <ClCompile Include="Components\RectangleComponent.cpp" />
     <ClCompile Include="Components\SimpleMath.cpp" />
+    <ClCompile Include="Components\SpaceGame.cpp" />
+    <ClCompile Include="Components\SpaceShip.cpp" />
+    <ClCompile Include="Components\SphereComponent.cpp" />
     <ClCompile Include="Main.cpp" />
     <None Include="Shaders\Base3dShader.hlsl" />
     <None Include="Shaders\MyVeryFirstShader.hlsl" />
@@ -172,10 +179,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\BaseComponent.h" />
+    <ClInclude Include="Components\Camera.h" />
+    <ClInclude Include="Components\CameraController.h" />
+    <ClInclude Include="Components\CelestialBody.h" />
     <ClInclude Include="Components\Delegates.h" />
     <ClInclude Include="Components\DisplayWin32.h" />
     <ClInclude Include="Components\Game.h" />
     <ClInclude Include="Components\GameComponent.h" />
+    <ClInclude Include="Components\GridComponent.h" />
     <ClInclude Include="Components\InputDevice.h" />
     <ClInclude Include="Components\Keys.h" />
     <ClInclude Include="Components\pch.h" />
@@ -184,6 +195,9 @@
     <ClInclude Include="Components\RectangleComponent.h" />
     <ClInclude Include="Components\SimpleMath.h" />
     <ClInclude Include="Components\SimpleMath.inl" />
+    <ClInclude Include="Components\SpaceGame.h" />
+    <ClInclude Include="Components\SpaceShip.h" />
+    <ClInclude Include="Components\SphereComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="Components\Delegates.natvis" />

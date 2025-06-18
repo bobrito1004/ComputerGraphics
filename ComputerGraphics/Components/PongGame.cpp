@@ -15,69 +15,6 @@ PongGame::PongGame() : Game(L"MyGame", 800, 800)
 		DirectX::XMFLOAT4(-0.02f, 0.2f, 0, 1.0f),	DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
 		DirectX::XMFLOAT4(0.02f, -0.2f, 0, 1.0f),	DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
 	};
-	shader_ = L"./Shaders/RectangleShader.hlsl";
-	
-	ID3DBlob* errorVertexCode = nullptr;
-	auto resShader = D3DCompileFromFile(shader_,
-		nullptr /*macros*/,
-		nullptr /*include*/,
-		"VSMain",
-		"vs_5_0",
-		D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION,
-		0,
-		&vertex_shader_byte_code_,
-		&errorVertexCode);
-
-	if (FAILED(resShader)) {
-		// If the shader failed to compile it should have written something to the error message.
-		if (errorVertexCode) {
-			char* compileErrors = (char*)(errorVertexCode->GetBufferPointer());
-
-			std::cout << compileErrors << std::endl;
-		}
-		// If there was  nothing in the error message then it simply could not find the shader file itself.
-		else
-		{
-			MessageBox(display_->hwnd_, shader_, L"Missing Shader File", MB_OK);
-		}
-
-		return;
-	}
-
-	D3D_SHADER_MACRO Shader_Macros[] = { "TEST", "1", "TCOLOR", "float4(0.0f, 1.0f, 0.0f, 1.0f)", nullptr, nullptr };
-
-	ID3DBlob* errorPixelCode;
-	resShader = D3DCompileFromFile(shader_,
-		Shader_Macros /*macros*/,
-		nullptr /*include*/,
-		"PSMain",
-		"ps_5_0",
-		D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION,
-		0,
-		&pixel_shader_byte_code_,
-		&errorPixelCode);
-
-	device_->CreateVertexShader(
-		vertex_shader_byte_code_->GetBufferPointer(),
-		vertex_shader_byte_code_->GetBufferSize(),
-		nullptr, &vertex_shader_);
-
-	device_->CreatePixelShader(
-		pixel_shader_byte_code_->GetBufferPointer(),
-		pixel_shader_byte_code_->GetBufferSize(),
-		nullptr, &pixel_shader_);
-
-
-
-
-
-
-
-
-
-
-
-	
 	std::vector<int> indices = { 0,1,2, 0,1,3 };
 	racket1_ = new RectangleComponent(this, points, indices);
 	racket1_->SetPosition(DirectX::XMFLOAT2(-0.95f, 0));
@@ -142,6 +79,12 @@ void PongGame::Update()
 		for (int i = size_before; i < components_.size(); ++i)
 			components_[i]->Update();
 	hits_ = {};
+
+	for (auto d : ballsToDelete) {
+		balls_.erase(std::next(balls_.begin(), d));
+		components_.erase(std::next(components_.begin(), d+2));
+	}
+	ballsToDelete = {};
 	//Game::Update();
 }
 
