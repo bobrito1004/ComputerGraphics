@@ -101,7 +101,9 @@ void KatamariBall::UpdateJump()
     if (position.y < 1.0f)
     {
         JumpCount = 0;
+        currentJump = 0.0f;
         position.y = 1.0f;
+        return;
     }
     
     if (JumpCount > 0)
@@ -112,4 +114,5 @@ void KatamariBall::UpdateJump()
             currentJump = max(currentJump, -10.0f);
         }
     }
+
 }

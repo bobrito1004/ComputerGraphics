@@ -12,6 +12,7 @@ protected:
     CameraController cameraController;
 public:
     KatamariBall* ball;
+    bool SpacePressed = false;
     std::vector<KatamariTrash*> furniture{};
     KatamariGame();
     void Update() override;

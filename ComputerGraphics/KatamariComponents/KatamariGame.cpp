@@ -38,9 +38,11 @@ KatamariGame::KatamariGame() : Game(L"Katamari Game", 800, 800), cameraControlle
 
     for (int i = 0; i < 10; ++i)
     {
-        KatamariTrash* melon = new KatamariTrash(this, "Models/earth.obj", L"Textures/earth.dds", 2.0f, Vector3(0.0f, 0.0f, 0.0f));
-        melon->SetScale(Vector3(10.f,10.f, 10.f));
-        melon->SetPosition(Vector3(static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f, 0.0f, static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f));
+        KatamariTrash* melon = new KatamariTrash(this, "Models/earth.obj", L"Textures/earth.dds", 2.0f,
+                                                 Vector3(0.0f, 0.0f, 0.0f));
+        melon->SetScale(Vector3(10.f, 10.f, 10.f));
+        melon->SetPosition(Vector3(static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f, 0.0f,
+                                   static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f));
         melon->shininess = 1000.f;
         melon->specularColor = DirectX::SimpleMath::Vector3(5.0f, 1.0f, 0.0f);
         melon->diffuseColor = DirectX::SimpleMath::Vector3(5.0f, 1.0f, 0.0f);
@@ -49,28 +51,30 @@ KatamariGame::KatamariGame() : Game(L"Katamari Game", 800, 800), cameraControlle
         furniture.push_back(melon);
     }
 
-    
-    
+
     for (int i = 0; i < 10; ++i)
     {
-        KatamariTrash* cucumber = new KatamariTrash(this, "Models/pumpkin.obj", L"Textures/white.dds", 0.9f, Vector3(0.0f, 0.0f, 0.0f));
+        KatamariTrash* cucumber = new KatamariTrash(this, "Models/pumpkin.obj", L"Textures/white.dds", 0.9f,
+                                                    Vector3(0.0f, 0.0f, 0.0f));
         cucumber->SetScale(Vector3(2.0f, 2.0f, 2.0f));
-        cucumber->SetPosition(Vector3(static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f, 0.0f, static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f));
+        cucumber->SetPosition(Vector3(static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f, 0.0f,
+                                      static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f));
         cucumber->collision.Radius = 0.8f;
         components_.push_back(cucumber);
         furniture.push_back(cucumber);
     }
     for (int i = 0; i < 10; ++i)
     {
-        KatamariTrash* cucumber = new KatamariTrash(this, "Models/pumpkin.obj", L"Textures/yellow.dds", 0.9f, Vector3(0.0f, 0.0f, 0.0f));
+        KatamariTrash* cucumber = new KatamariTrash(this, "Models/pumpkin.obj", L"Textures/yellow.dds", 0.9f,
+                                                    Vector3(0.0f, 0.0f, 0.0f));
         cucumber->SetScale(Vector3(5.0f, 5.0f, 5.0f));
-        cucumber->SetPosition(Vector3(static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f, 0.0f, static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f));
+        cucumber->SetPosition(Vector3(static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f, 0.0f,
+                                      static_cast<float>(rand()) / RAND_MAX * 100.0f - 50.0f));
         cucumber->collision.Radius = 0.8f;
         components_.push_back(cucumber);
         furniture.push_back(cucumber);
     }
     cameraController.targetBall = ball;
-    
 }
 
 void KatamariGame::Update()
@@ -96,12 +100,22 @@ void KatamariGame::Update()
 
     if (input_dev_->IsKeyDown(Keys::Space))
     {
-        ball->Jump();
+        if (!SpacePressed)
+        {
+            ball->Jump();
+            SpacePressed = true;
+        }
+    }
+    else
+    {
+        SpacePressed = false;   
     }
     dir.y = ball->currentJump;
+
+    std::cout << dir.y << "\n";
     if (dir.Length() > 0.0f)
-       // std::cout << dir.x << " " << dir.y << " " << dir.z << " "<< '\n';
         ball->SetDirection(dir);
+
     Game::Update();
 }
 
