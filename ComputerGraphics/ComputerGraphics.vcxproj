@@ -163,6 +163,7 @@
     <ClCompile Include="Components\Game.cpp" />
     <ClCompile Include="Components\GameComponent.cpp" />
     <ClCompile Include="Components\InputDevice.cpp" />
+    <ClCompile Include="Components\OrbitComonent.cpp" />
     <ClCompile Include="Components\pch.cpp" />
     <ClCompile Include="Components\PongBall.cpp" />
     <ClCompile Include="Components\PongGame.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Components\SpaceGame.cpp" />
     <ClCompile Include="Components\SphereComponent.cpp" />
     <ClCompile Include="Main.cpp" />
+    <None Include="Shaders\OrbitShader.hlsl" />
     <None Include="Shaders\Base3dShader.hlsl" />
     <None Include="Shaders\MyVeryFirstShader.hlsl" />
     <None Include="Shaders\RectangleShader.hlsl" />
@@ -186,6 +188,7 @@
     <ClInclude Include="Components\GameComponent.h" />
     <ClInclude Include="Components\InputDevice.h" />
     <ClInclude Include="Components\Keys.h" />
+    <ClInclude Include="Components\OrbitComonent.h" />
     <ClInclude Include="Components\pch.h" />
     <ClInclude Include="Components\PongBall.h" />
     <ClInclude Include="Components\PongGame.h" />
@@ -194,6 +197,7 @@
     <ClInclude Include="Components\SimpleMath.inl" />
     <ClInclude Include="Components\SpaceGame.h" />
     <ClInclude Include="Components\SphereComponent.h" />
+    <ClInclude Include="Components\Vertex.h" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="Components\Delegates.natvis" />

@@ -11,12 +11,18 @@ constexpr int StackCount = 32;
 CelestialBody::CelestialBody(Game* game, const CelestialBodyDesc& desc) :
     SphereComponent(game, desc.Radius, SliceCount, StackCount, desc.PrimaryColor, desc.SecondaryColor),
     spinAxis(desc.SpinAxis), spinSpeed(desc.SpinSpeed), orbitAnchor(desc.OrbitAnchor), orbitRadius(desc.OrbitRadius),
-    orbitOrientationForward(desc.OrbitOrientationForward), orbitOrientationUp(desc.OrbitOrientationUp), orbitSpeed(desc.OrbitSpeed), absoluteVelocity(Vector3::Zero)
+    orbitOrientationForward(desc.OrbitOrientationForward), orbitOrientationUp(desc.OrbitOrientationUp),
+    orbitSpeed(desc.OrbitSpeed), absoluteVelocity(Vector3::Zero)
 {
     if (orbitAnchor)
     {
         relativePosition = desc.OrbitOrientationForward * orbitRadius;
         position = orbitAnchor->position + relativePosition;
+
+        orbit = new OrbitComponent(game, orbitRadius, 64, orbitAnchor->relativePosition,
+                                   Vector4(0.5f, 0.5f, 0.5f, 1.0f)
+        );
+        orbit->Initialize();
     }
     else
     {
@@ -26,27 +32,27 @@ CelestialBody::CelestialBody(Game* game, const CelestialBodyDesc& desc) :
 
 void CelestialBody::Update()
 {
+    SphereComponent::Update();
     if (orbitAnchor)
     {
-        relativePosition = XMVector4Transform(relativePosition, Matrix::CreateFromAxisAngle(orbitOrientationUp, game->delta_time_ * orbitSpeed));
+        relativePosition = XMVector4Transform(relativePosition,
+                                              Matrix::CreateFromAxisAngle(
+                                                  orbitOrientationUp, game->delta_time_ * orbitSpeed));
         position = orbitAnchor->position + relativePosition;
+        orbit->SetCenter(orbitAnchor->position);
     }
     else
     {
-        position = XMVector4Transform(position, Matrix::CreateFromAxisAngle(orbitOrientationUp, game->delta_time_ * orbitSpeed));
+        position = XMVector4Transform(
+            position, Matrix::CreateFromAxisAngle(orbitOrientationUp, game->delta_time_ * orbitSpeed));
     }
     rotation *= Quaternion::CreateFromAxisAngle(spinAxis, spinSpeed * game->delta_time_);
-    //
-    // const float accelerationRate = 0.05f; // Tune this: how fast they accelerate
-    // if (absoluteVelocity.LengthSquared() > 0.01f) // Avoid amplifying tiny velocities
-    // {
-    //     Vector3 velocityDirection = absoluteVelocity;
-    //     velocityDirection.Normalize();
-    //     absoluteVelocity += velocityDirection * accelerationRate * game->delta_time_;
-    // }
-    
-    // Update position with velocity
-    position += absoluteVelocity * game->delta_time_;
-    SphereComponent::Update();
 
+    position += absoluteVelocity * game->delta_time_;
+}
+
+void CelestialBody::Draw()
+{
+    SphereComponent::Draw();
+ 
 }

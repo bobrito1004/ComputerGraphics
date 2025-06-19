@@ -7,6 +7,7 @@ D:\Code\ComputerGraphics\ComputerGraphics\Components\DisplayWin32.cpp;D:\Code\Co
 D:\Code\ComputerGraphics\ComputerGraphics\Components\Game.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\Game.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Components\GameComponent.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\GameComponent.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Components\InputDevice.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\InputDevice.obj
+D:\Code\ComputerGraphics\ComputerGraphics\Components\OrbitComonent.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\OrbitComonent.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Components\pch.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\pch.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Components\PongBall.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\PongBall.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Components\PongGame.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\PongGame.obj
@@ -14,4 +15,5 @@ D:\Code\ComputerGraphics\ComputerGraphics\Components\RectangleComponent.cpp;D:\C
 D:\Code\ComputerGraphics\ComputerGraphics\Components\SimpleMath.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\SimpleMath.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Components\SpaceGame.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\SpaceGame.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Components\SphereComponent.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\SphereComponent.obj
+D:\Code\ComputerGraphics\ComputerGraphics\Components\Vertex.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\Vertex.obj
 D:\Code\ComputerGraphics\ComputerGraphics\Main.cpp;D:\Code\ComputerGraphics\ComputerGraphics\x64\Debug\Main.obj

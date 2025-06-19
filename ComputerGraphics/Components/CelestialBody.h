@@ -1,4 +1,5 @@
 #pragma once
+#include "OrbitComonent.h"
 #include "SphereComponent.h"
 
 class CelestialBody;
@@ -34,9 +35,11 @@ protected:
     float orbitRadius;
     float orbitSpeed;
 public:
+    OrbitComponent* orbit;
     CelestialBody* orbitAnchor;
     DirectX::SimpleMath::Vector3 relativePosition;
     DirectX::SimpleMath::Vector3 absoluteVelocity = DirectX::SimpleMath::Vector3(0.0f, 0.0f, 0.0f);
     CelestialBody(Game* game, const CelestialBodyDesc& desc);
     void Update() override;
+    void Draw() override;
 };

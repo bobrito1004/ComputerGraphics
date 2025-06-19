@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_18_06_2025_9_53_[Changes]" date="1750229604062" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.ComputerGraphics/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2025_9_53_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 18.06.2025 9:53 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="ComputerGraphics/x64/Debug/vc143.idb" />
+    <option name="AFTER_PATH" value="ComputerGraphics/x64/Debug/vc143.idb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ComputerGraphics/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2025_9_53_[Changes]/vc143.idb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ComputerGraphics/x64/Debug/ComputerGraphics.tlog/link.read.1.tlog" />
+    <option name="AFTER_PATH" value="ComputerGraphics/x64/Debug/ComputerGraphics.tlog/link.read.1.tlog" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ComputerGraphics/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2025_9_53_[Changes]/link.read.1.tlog" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ComputerGraphics/x64/Debug/Main.obj" />
+    <option name="AFTER_PATH" value="ComputerGraphics/x64/Debug/Main.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ComputerGraphics/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2025_9_53_[Changes]/Main.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ComputerGraphics/x64/Debug/ComputerGraphics.ilk" />
+    <option name="AFTER_PATH" value="ComputerGraphics/x64/Debug/ComputerGraphics.ilk" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ComputerGraphics/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2025_9_53_[Changes]/ComputerGraphics.ilk" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ComputerGraphics/x64/Debug/vc143.pdb" />
+    <option name="AFTER_PATH" value="ComputerGraphics/x64/Debug/vc143.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.ComputerGraphics/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_06_2025_9_53_[Changes]/vc143.pdb" />
+  </binary>
+</changelist>

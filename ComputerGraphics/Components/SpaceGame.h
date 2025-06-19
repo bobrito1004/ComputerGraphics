@@ -16,6 +16,4 @@ public:
 	CameraController controller;
 	SpaceGame();
 	void Update() override;
-	void ApplyGravity(CelestialBody* currentBody, const std::unordered_map<std::string, CelestialBody*>& allBodies);
-
 };
