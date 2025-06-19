@@ -13,7 +13,7 @@ CelestialBody::CelestialBody(Game* game, const CelestialBodyDesc& desc) :
     spinAxis(desc.SpinAxis), spinSpeed(desc.SpinSpeed), orbitAnchor(desc.OrbitAnchor), orbitRadius(desc.OrbitRadius),
     orbitOrientationForward(desc.OrbitOrientationForward), orbitOrientationUp(desc.OrbitOrientationUp),
     orbitSpeed(desc.OrbitSpeed), absoluteVelocity(Vector3::Zero)
-{
+{g
     if (orbitAnchor)
     {
         relativePosition = desc.OrbitOrientationForward * orbitRadius;
