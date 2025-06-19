@@ -20,8 +20,10 @@ void KatamariBall::UpdateSize(float absorbedSize)
     gameSize = tmp;
 }
 
-KatamariBall::KatamariBall(Game* game) : SphereComponent(game, 1.0f, 32, 32, L"Textures/red.dds"), rotationDrag(0.14f), rotationMaxSpeed(0.1f), moveMaxSpeed(8.0f), moveDrag(5.0f), savedRot(Quaternion::Identity),
-velocity(Vector3::Zero), collision(position, 1.0f), gameSize(1.0f)
+KatamariBall::KatamariBall(Game* game) : SphereComponent(game, 1.0f, 32, 32, L"Textures/red.dds"), rotationDrag(0.14f),
+                                         rotationMaxSpeed(0.1f), moveMaxSpeed(8.0f), moveDrag(5.0f),
+                                         savedRot(Quaternion::Identity),
+                                         velocity(Vector3::Zero), collision(position, 1.0f), gameSize(1.0f)
 {
     kGame = dynamic_cast<KatamariGame*>(game);
 }
@@ -60,7 +62,7 @@ void KatamariBall::Update()
     velocity *= 1.0f - moveDrag * game->delta_time_;
 
     SphereComponent::Update();
-
+    UpdateJump();
     position += velocity * game->delta_time_;
 }
 
@@ -71,7 +73,7 @@ void KatamariBall::DestroyResources()
 
 void KatamariBall::SetDirection(Vector3 dir)
 {
-    Vector3 tmp = Vector3(dir.x, 0.0f, dir.z);
+    Vector3 tmp = Vector3(dir.x, dir.y, dir.z);
     tmp.Normalize();
     Quaternion q = Quaternion::CreateFromAxisAngle(tmp.Cross(Vector3::Up), -rotationMaxSpeed);
     float f = Quaternion::Angle(Quaternion::Identity, savedRot) / 0.1f;
@@ -82,4 +84,32 @@ void KatamariBall::SetDirection(Vector3 dir)
 void KatamariBall::SetPosition(DirectX::SimpleMath::Vector3 p)
 {
     SphereComponent::SetPosition(p);
+}
+
+void KatamariBall::Jump()
+{
+    JumpCount++;
+
+    if (JumpCount < MaxJump)
+    {
+        currentJump = 10.0f;
+    }
+}
+
+void KatamariBall::UpdateJump()
+{
+    if (position.y < 1.0f)
+    {
+        JumpCount = 0;
+        position.y = 1.0f;
+    }
+    
+    if (JumpCount > 0)
+    {
+        if (currentJump > -10.0f)
+        {
+            currentJump -= 0.1f;
+            currentJump = max(currentJump, -10.0f);
+        }
+    }
 }

@@ -14,9 +14,9 @@ void SpaceGame::SetBackgroundColor()
 
 SpaceGame::SpaceGame() : Game(L"MyGame", 800, 800), controller (this)
 {
-	components_.push_back(new GridComponent(this, 1.0f, 1000));
+	//components_.push_back(new GridComponent(this, 1.0f, 1000));
 	//components_.push_back(new SphereComponent(this, 1.0f, 32, 32, L"Textures/duck.dds"));
-	components_.push_back(new ObjectComponent(this, "Models/duck.obj", L"Textures/duck.dds"));
+	//components_.push_back(new ObjectComponent(this, "Models/duck.obj", L"Textures/duck.dds"));
 	input_dev_->MouseMove.AddRaw(&controller, &CameraController::OnMouseMove);
 }
 

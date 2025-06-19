@@ -78,25 +78,35 @@ void KatamariGame::Update()
     cameraController.Update();
     Vector3 dir = Vector3::Zero;
     if (input_dev_->IsKeyDown(Keys::W))
-        //dir += CameraController->GetForward();
+    {
         dir += Camera->Target - Camera->Position;
+    }
     if (input_dev_->IsKeyDown(Keys::S))
-        //dir -= CameraController->GetForward();
+    {
         dir -= Camera->Target - Camera->Position;
+    }
     if (input_dev_->IsKeyDown(Keys::A))
-        //dir -= (CameraController->GetForward()).Cross(CameraController->GetUp());
+    {
         dir -= (Camera->Target - Camera->Position).Cross(Camera->Up);
+    }
     if (input_dev_->IsKeyDown(Keys::D))
-        //dir += (CameraController->GetForward()).Cross(CameraController->GetUp());
+    {
         dir += (Camera->Target - Camera->Position).Cross(Camera->Up);
+    }
+
+    if (input_dev_->IsKeyDown(Keys::Space))
+    {
+        ball->Jump();
+    }
+    dir.y = ball->currentJump;
     if (dir.Length() > 0.0f)
+       // std::cout << dir.x << " " << dir.y << " " << dir.z << " "<< '\n';
         ball->SetDirection(dir);
     Game::Update();
 }
 
 void KatamariGame::PrepareFrame()
 {
-
     context_->ClearState();
 
     context_->RSSetState(rast_state_);

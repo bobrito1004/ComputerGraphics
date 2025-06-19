@@ -16,6 +16,9 @@ public:
     float moveMaxSpeed;
     float moveDrag;
     float radius = 1.0;
+    float currentJump = 0.0;
+    int MaxJump = 2;
+    int JumpCount = 0;
     DirectX::SimpleMath::Quaternion savedRot;
     DirectX::SimpleMath::Vector3 velocity;
     DirectX::BoundingSphere collision;
@@ -28,4 +31,6 @@ public:
     void DestroyResources() override;
     void SetDirection(DirectX::SimpleMath::Vector3 dir);
     void SetPosition(DirectX::SimpleMath::Vector3 p) override;
+    void Jump();
+    void UpdateJump();
 };
